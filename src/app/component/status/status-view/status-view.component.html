@@ -1,0 +1,9 @@
+<h2>Status Details </h2>
+
+    <hr/>
+    <div *ngIf="Status">
+        <div>
+            <label><b>Status:  </b></label>{{Status.name}}
+        </div>
+    </div>
+    <button (click)="back()" class="btn btn-secondary">Back</button>
