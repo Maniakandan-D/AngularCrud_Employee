@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="text-center">
+        <h1>Sign Up</h1>
+        <h6>Register</h6>
+      </div>
+      <form>
+        <form [formGroup]="signupForm" (ngSubmit)="signupForm.valid && signup()" #localForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text"  formControlName="name" class="form-control" [class.is-invalid]="localForm.submitted && signupForm.get('name')?.invalid" placeholder="Name" autocomplete="off">
+            <div class="invalid-feedback">
+              *Name is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mobileNo">Mobile No</label>
+            <input type="number"  formControlName="mobileNo" class="form-control" [class.is-invalid]="localForm.submitted && signupForm.get('mobileNo')?.invalid" placeholder="Mobile No" autocomplete="off">
+            <div class="invalid-feedback">
+              *Mobile no is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"  formControlName="email" class="form-control" [class.is-invalid]="localForm.submitted && signupForm.get('email')?.invalid" placeholder="Email" autocomplete="off">
+            <div class="invalid-feedback">
+              *Email is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input [type]="type"  formControlName="password" class="form-control" [class.is-invalid]="localForm.submitted && signupForm.get('password')?.invalid" placeholder="Password" autocomplete="off">
+            <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+            <div class="invalid-feedback">
+              *Password is required
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Signup</button>
+        </form>
+        <a routerLink="/login">Already register? click to Login!!</a>
+      </form>
+    </div>
+  </div>
+</div>

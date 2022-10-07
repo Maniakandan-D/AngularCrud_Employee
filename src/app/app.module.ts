@@ -21,6 +21,8 @@ import { StatusModule } from './component/status/module/status.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -35,6 +37,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     DepartmentComponent,
     DesignationComponent,
     StatusComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

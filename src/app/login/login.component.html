@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="text-center">
+        <h1>Login</h1>
+        <h6>Please enter email & password !!</h6>
+      </div>
+      <form>
+        <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && login()" #localForm="ngForm">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" formControlName="email" class="form-control" [class.is-invalid]="localForm.submitted && loginForm.get('email')?.invalid" placeholder="Enter email" autocomplete="off">
+            <div class="invalid-feedback">
+              *Email is required
+            </div>
+          </div>
+          <div class="form-group pt-3">
+            <label for="password">Password</label>
+            <input [type]="type" formControlName="password" class="form-control" [class.is-invalid]="localForm.submitted && loginForm.get('password')?.invalid" placeholder="Enter password" autocomplete="off">
+            <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+            <div class="invalid-feedback">
+              *Password is required
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <a routerLink="/signup">Don't have an account? signup!!</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+

@@ -36,7 +36,7 @@
                 Export
            </button>
            <div class="dropdown-menu">
-               <a class="dropdown-item" href="#">Logout</a>
+               <button class="dropdown-item" routerLink="/login">Logout</button>
            </div>
         </li>
       </ul>
@@ -60,7 +60,7 @@
           </div>
           <div *ngIf="row.isEdit" novalidate>
             <input type="text" #department="ngModel" required name="department" [(ngModel)]="row.name" class="form-control"/>
-          </div> 
+          </div>
         </td>
         <td>
           <div class="row" *ngIf="!row.isEdit">

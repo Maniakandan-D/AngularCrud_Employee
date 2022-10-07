@@ -8,6 +8,7 @@ export const environment = {
   BackendApiEndpointDept: "http://localhost:3000/Departments",
   BackendApiEndpointDesign: "http://localhost:3000/Designation",
   BackendApiEndpointStatus: "http://localhost:3000/Status",
+  BackendApiEndpointSignup: "http://localhost:3000/SignupUsers",
 
 };
 
