@@ -11,10 +11,10 @@ import { AuthGuard } from './core/auth.guard';
 
 const routes: Routes = [
   {path:'employees' ,component: EmployeesComponent},
-  {path:'department' ,component: DepartmentComponent, canActivate: [AuthGuard]},
-  {path:'designation' ,component: DesignationComponent, canActivate: [AuthGuard]},
-  {path:'status' ,component: StatusComponent, canActivate: [AuthGuard]},
-  {path:'payroll' ,component: PayrollComponent, canActivate: [AuthGuard]},
+  {path:'department' ,component: DepartmentComponent},
+  {path:'designation' ,component: DesignationComponent},
+  {path:'status' ,component: StatusComponent },
+  {path:'payroll' ,component: PayrollComponent},
   {path: '', redirectTo: 'component/employees', pathMatch: 'full',},
   {path: '', redirectTo: 'component/designation', pathMatch: 'full',},
   {path: '', redirectTo: 'component/department', pathMatch: 'full',},
