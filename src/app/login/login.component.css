@@ -1,0 +1,18 @@
+.card{
+  margin-top: 200px;
+  border: none;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(100%);
+}
+.fa.fa-eye, .fa.fa-eye-slash {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  padding-left: 369px;
+  top: 270px;
+  position: absolute;
+}

@@ -2,7 +2,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -20,30 +19,30 @@ describe('DepartmentComponent', () => {
 
   let fakedDepartments = [new Department()];
 
-  let observableDepartments: Observable<Department[]> =   
+  let observableDepartments: Observable<Department[]> =
     new Observable(observer => {
       observer.next(fakedDepartments);
       observer.complete();
   });
 
-  let observableDelDepartment: Observable<Department> =   
+  let observableDelDepartment: Observable<Department> =
     new Observable(observer => {
       observer.next(new Department());
       observer.complete();
   });
 
-  let observableGetByName: Observable<Department[]> =   
+  let observableGetByName: Observable<Department[]> =
     new Observable(observer => {
       observer.next([]);
       observer.complete();
-  });  
+  });
 
-  let observableUpdate: Observable<Department> =   
+  let observableUpdate: Observable<Department> =
     new Observable(observer => {
       observer.next(null);
       observer.complete();
   });
-  
+
   let navigateStub: Partial<AlertService> = {
     showSuccess: () => new Promise(res => true),
     showWarning: () => new Promise(res => true),
@@ -70,13 +69,13 @@ describe('DepartmentComponent', () => {
         ToastrModule.forRoot()
       ],
       declarations: [ DepartmentComponent ],
-      providers:[{ 
-        provide: DepartmentService,  
-        useValue: departmentServiceStub 
+      providers:[{
+        provide: DepartmentService,
+        useValue: departmentServiceStub
       },
-      { 
-        provide: AlertService,  
-        useValue: navigateStub 
+      {
+        provide: AlertService,
+        useValue: navigateStub
       }],
       schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
@@ -114,7 +113,7 @@ describe('DepartmentComponent', () => {
     });
 
     component.deleteDepartment(seventhDept);
-  
+
     expect(component.departmentData.length).toEqual(9);
   });
 
@@ -140,7 +139,7 @@ describe('DepartmentComponent', () => {
   });
 
   it('update department', () => {
-    
+
     var updateDepartment = new DepartmentVM();
     updateDepartment.id = "1";
     updateDepartment.name = "dept1";
@@ -150,5 +149,5 @@ describe('DepartmentComponent', () => {
 
     expect(updateDepartment.isEdit).toEqual(false);
   });
- 
+
 });

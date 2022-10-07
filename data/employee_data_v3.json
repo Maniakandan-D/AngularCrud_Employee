@@ -7088,5 +7088,14 @@
       "createdOn": "2022-09-23T11:32:51.z",
       "modifiedOn": "2022-09-23T11:32:51 -06:-30"
     }
+  ],
+  "SignupUsers": [
+    {
+      "name": "12334",
+      "mobileNo": 9843775232,
+      "email": "mani@123",
+      "password": "12345678",
+      "id": 1
+    }
   ]
 }
